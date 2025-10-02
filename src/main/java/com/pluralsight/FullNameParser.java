@@ -19,15 +19,21 @@ public class FullNameParser {
         String middleName = "N/A";
         String lastName = "";
 
-
-
-        //create a for loop that prints all names provided by the user from the array
-        for(int i = 0; i < splitName.length; i++){
-
-            System.out.println("Name " + (i +1) + ": " + splitName[i]); //checking if names are being split
-
+        //create an if statements that goes through the possible inputs from the user
+        if (splitName.length == 1) {
+            firstName = splitName[0];// Only first name
+        } else if (splitName.length == 2) {
+            firstName = splitName[0]; // First and last name
+            lastName = splitName[1];
+        } else if (splitName.length >= 3) {
+            firstName = splitName[0];// First, middle, last
+            lastName = splitName[splitName.length - 1];
         }
-        //create an if statement that
+
+        //print out names using format from workbook
+        System.out.println("\nFirst name: " + firstName);
+        System.out.println("Middle name: " + middleName);
+        System.out.println("Last name: " + lastName);
     }
 
 }
